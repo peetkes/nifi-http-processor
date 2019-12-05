@@ -16,3 +16,5 @@ mvn -Dmaven.repo.local=/your/local/mvn/repo clean install
 This command downloads all dependencies into folder `/your/local/mvn/repo`
 You can zip up this folder for distribution if you cannot work in connected mode.
 
+This project is inspired by [stackoverflow](https://stackoverflow.com/questions/35620415/how-create-ntlm-authentification-with-retrofit)
+
