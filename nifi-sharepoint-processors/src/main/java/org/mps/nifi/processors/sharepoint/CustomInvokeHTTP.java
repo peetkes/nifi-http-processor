@@ -92,7 +92,7 @@ import static org.apache.commons.lang3.StringUtils.trimToEmpty;
 @DynamicProperty(name = "Header Name", value = "Attribute Expression Language", expressionLanguageScope = ExpressionLanguageScope.FLOWFILE_ATTRIBUTES,
         description = "Send request header with a key matching the Dynamic Property Key and a value created by evaluating "
                 + "the Attribute Expression Language set in the value of the Dynamic Property.")
-public class MPSInvokeHTTP extends AbstractProcessor {
+public class CustomInvokeHTTP extends AbstractProcessor {
     // flowfile attribute keys returned after reading the response
     public final static String STATUS_CODE = "invokehttp.status.code";
     public final static String STATUS_MESSAGE = "invokehttp.status.message";

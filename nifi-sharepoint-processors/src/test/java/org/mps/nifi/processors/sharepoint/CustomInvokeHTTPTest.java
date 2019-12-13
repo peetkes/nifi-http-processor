@@ -22,13 +22,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class MPSInvokeHTTPTest {
+public class CustomInvokeHTTPTest {
 
     private TestRunner testRunner;
 
     @Before
     public void init() {
-        testRunner = TestRunners.newTestRunner(MPSInvokeHTTP.class);
+        testRunner = TestRunners.newTestRunner(CustomInvokeHTTP.class);
     }
 
     @Test
