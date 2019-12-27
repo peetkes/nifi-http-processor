@@ -57,6 +57,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Proxy;
+import java.net.Proxy.Type;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -514,7 +515,7 @@ public class CustomInvokeHTTP extends AbstractProcessor {
                 if (newValue == null || newValue.isEmpty()) {
                     regexAttributesToSend = null;
                 } else {
-                    final String trimmedValue = trimToEmpty(newValue);
+                    final String trimmedValue = StringUtils.trimToEmpty(newValue);
                     regexAttributesToSend = Pattern.compile(trimmedValue);
                 }
             }
@@ -579,7 +580,7 @@ public class CustomInvokeHTTP extends AbstractProcessor {
             final String proxyHost = context.getProperty(PROP_PROXY_HOST).evaluateAttributeExpressions().getValue();
             final Integer proxyPort = context.getProperty(PROP_PROXY_PORT).evaluateAttributeExpressions().asInteger();
             if (proxyHost != null && proxyPort != null) {
-                componentProxyConfig.setProxyType(Proxy.Type.HTTP);
+                componentProxyConfig.setProxyType(Type.HTTP);
                 componentProxyConfig.setProxyServerHost(proxyHost);
                 componentProxyConfig.setProxyServerPort(proxyPort);
                 final String proxyUsername = trimToEmpty(context.getProperty(PROP_PROXY_USER).evaluateAttributeExpressions().getValue());
@@ -591,7 +592,7 @@ public class CustomInvokeHTTP extends AbstractProcessor {
         });
 
         final Proxy proxy = proxyConfig.createProxy();
-        if (!Proxy.Type.DIRECT.equals(proxy.type())) {
+        if (!Type.DIRECT.equals(proxy.type())) {
             okHttpClientBuilder.proxy(proxy);
             if (proxyConfig.hasCredential()) {
                 ProxyAuthenticator proxyAuthenticator = new ProxyAuthenticator(proxyConfig.getProxyUserName(), proxyConfig.getProxyUserPassword());
