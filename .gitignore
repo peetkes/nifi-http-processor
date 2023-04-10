@@ -207,3 +207,5 @@ gradle-app.setting
 *.hprof
 
 # End of https://www.toptal.com/developers/gitignore/api/maven,visualstudiocode,intellij+all,sublimetext,gradle,vim
+.fake
+/.vscode
