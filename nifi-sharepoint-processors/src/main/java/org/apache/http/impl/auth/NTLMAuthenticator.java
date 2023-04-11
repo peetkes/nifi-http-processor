@@ -37,7 +37,7 @@ public class NTLMAuthenticator implements Authenticator {
         }
         String ntlmMsg3 = null;
         try {
-            ntlmMsg3 = engine.generateType3Msg(username, password, domain, "android-device", WWWAuthenticate.get(0).substring(5));
+            ntlmMsg3 = engine.generateType3Msg(username, password, domain, "localhost", WWWAuthenticate.get(0).substring(5));
         } catch (Exception e) {
             e.printStackTrace();
         }
