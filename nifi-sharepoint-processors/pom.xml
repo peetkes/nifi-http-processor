@@ -77,6 +77,5 @@
             <version>${nifi.version}</version>
             <type>nar</type>
         </dependency>
-
     </dependencies>
 </project>
