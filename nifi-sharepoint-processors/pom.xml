@@ -19,7 +19,7 @@
     <parent>
         <groupId>org.mps.nifi</groupId>
         <artifactId>nifi-http-processor</artifactId>
-        <version>1.22.0</version>
+        <version>1.24.0</version>
     </parent>
 
     <artifactId>nifi-sharepoint-processors</artifactId>
